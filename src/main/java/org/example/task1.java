@@ -100,8 +100,23 @@ public class task1 {
             System.out.println(message);
             return true;
         }
+        if(chekDraw()){
+            System.out.println("Draw");
+            return true;
+        }
         return false;
     }
+    private static boolean chekDraw(){
+        for (int i = 0; i < SIZE_X; i++) {
+            for (int j = 0; j < SIZE_Y; j++) {
+                if(field[i][j]== DOT_EMPTY)
+                    return false;
+            }
+        }
+        return true;
+    }
+
+
     private static boolean checkWin(char symbol) {
 
         for (int i = 0; i < SIZE_X; i++) {
@@ -115,6 +130,7 @@ public class task1 {
                 (field[2][0] == symbol && field[1][1] == symbol && field[0][2] == symbol);
         }
     }
+
 
 
 
